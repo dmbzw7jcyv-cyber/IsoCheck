@@ -1,6 +1,6 @@
 # ISO Check
 
-A dark, Mint-green Linux ISO verifier built for Railway. No accounts, file uploads, database, tracking scripts, or retained file history.
+A dark, Mint-green Linux ISO verifier with Railway and Cloudflare Worker deployment support. No accounts, file uploads, database, tracking scripts, or retained file history.
 
 ## Run
 
@@ -41,3 +41,7 @@ No checksum values are hard-coded. Inaccessible sources always result in an unve
 ## Project layout
 
 `server.mjs` serves the UI and allowlisted checksum lookup. `public/app.mjs` handles UI state. `public/hash-worker.js` streams local files into SHA-256. `public/checksums.mjs` parses manifests. `public/vendor/` includes the browser hashing library and its license.
+
+## Cloudflare build
+
+Run `npm run build` to emit the standalone Worker at `dist/server/index.js`. It embeds the static assets and preserves the same restricted checksum lookup API. Sites manages the Cloudflare deployment. The original Node server and Railway deployment files remain available.
