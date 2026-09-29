@@ -7,3 +7,7 @@
 - Optional WebMCP status-read tool validated with a test registry for both valid and invalid inputs. Native WebMCP integration was not available for validation.
 - No real multi-gigabyte ISO was downloaded or boot-tested. Browser tests used synthetic ISO-named files, including a synthetic ISO 9660 header. The application explicitly distinguishes basic header detection from a full ISO or boot test.
 - This report covers pre-deployment validation; Railway deployment status is available in the Railway dashboard.
+
+## Clear result update — 2026-09-29
+
+All 8 automated tests pass, including DOM interaction tests executing the actual hashing worker with hash-wasm. A known 5 MiB file passes; changing one byte fails. Tested explicit PASS/FAIL/NOT VERIFIED text, source labels, missing ISO header warning, result invalidation, cancelled worker messages, active multi-file drops, and cancelled checksum-file reads. These are DOM/runtime tests, not a new real-browser layout test; the standalone Worker does not support this environment's managed browser preview. Earlier Chromium desktop/mobile checks remain documented above.
