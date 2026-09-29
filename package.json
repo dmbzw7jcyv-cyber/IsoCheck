@@ -1,0 +1,17 @@
+{
+  "name": "iso-check",
+  "version": "1.0.0",
+  "description": "Privacy-first Linux ISO checksum verifier",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "Apache-2.0",
+  "type": "module",
+  "dependencies": {
+    "hash-wasm": "^4.12.0"
+  }
+}
